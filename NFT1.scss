@@ -1166,6 +1166,10 @@ header::after{
 
   .newsletter-content {
     display: flex;
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
+    } 
   
     .left {
       display: flex;
@@ -1179,6 +1183,10 @@ header::after{
   
       .description-container {
         width: 70%;
+
+        @media only screen and (max-width: 1024px) {
+          width: 100%;
+        } 
       }
   
       .form-newsletter {
