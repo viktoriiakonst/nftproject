@@ -534,6 +534,7 @@ header::after{
   .grid-icon{
     width: 62px;
     height: 62px;
+    margin-bottom:20px;
   }
 
   .testimonial:first-child {
@@ -594,11 +595,14 @@ header::after{
     }
     .position {
       width: 90%;
+      margin: 20px 0;
     }
     .animated-container{
       width: 100%;
       display: flex;
       justify-content: center;
+      border: 2px solid rgba(247, 246, 253, 0.872);
+      border-radius: 40px;
     }
     .animated{
       width: 100%;
@@ -624,7 +628,7 @@ header::after{
     grid-area: two;
 
     .img{
-      padding: 32px 0px;
+      padding: 32px 0;
     }
     .icon {
       width: 100%;
@@ -637,15 +641,43 @@ header::after{
 
     .image-container {
       display: flex;
+      position: relative;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
-      gap: 32px;
+      align-items:center;
+      gap: 10px;
       margin-bottom: 16px;
+      border-radius: 16px;
+      background:var(--clr-hover);
+      overflow: hidden;
 
       img {
-        width: 45%;
-        border: 2px solid black;
+      width: 45%;
+      padding: 10px 5px;
+      z-index: 2;
+      }
+    }
+    .image-container::before{
+      content:'';
+      position: absolute;
+      width: 260px;
+      height: 200%;
+      margin-bottom: 32px;
+      background: var(--lime-gradient);
+      animation: animate 4s linear infinite;
+    }
+    .image-container::after{
+      content:'';
+      position: absolute;
+      inset: 4px;
+      background: var(--clr-hover);
+      border-radius: 16px;
+    }
+    @keyframes animate{
+      0% {transform: rotate(0deg);}
+      100% {
+        transform: rotate(360deg);
       }
     }
   }
@@ -1235,6 +1267,7 @@ header::after{
           perspective: 1000px;
           perspective-origin: 5% calc(5% - 350px);
           margin: 60px;
+          
         }
       }
       .scene{
@@ -1280,17 +1313,14 @@ header::after{
       }
       
       .image-container {
-        
         .screen {
           .logo-home {
             position: absolute;
             width: 180px;
             height: 180px;
             transform: translate(-50%,-50%);
-           
           }
         }
-       
       }
     }
   }

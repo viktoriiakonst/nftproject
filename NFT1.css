@@ -517,6 +517,7 @@ header::after {
 .testimonial-grid .grid-icon {
   width: 62px;
   height: 62px;
+  margin-bottom: 20px;
 }
 .testimonial-grid .testimonial:first-child {
   display: flex;
@@ -583,11 +584,14 @@ header::after {
 }
 .testimonial-grid .testimonial:first-child .position {
   width: 90%;
+  margin: 20px 0;
 }
 .testimonial-grid .testimonial:first-child .animated-container {
   width: 100%;
   display: flex;
   justify-content: center;
+  border: 2px solid rgba(247, 246, 253, 0.872);
+  border-radius: 40px;
 }
 .testimonial-grid .testimonial:first-child .animated {
   width: 100%;
@@ -611,7 +615,7 @@ header::after {
   grid-area: two;
 }
 .testimonial-grid .testimonial:nth-child(2) .img {
-  padding: 32px 0px;
+  padding: 32px 0;
 }
 .testimonial-grid .testimonial:nth-child(2) .icon {
   width: 100%;
@@ -622,15 +626,54 @@ header::after {
 }
 .testimonial-grid .testimonial:nth-child(2) .image-container {
   display: flex;
+  position: relative;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 32px;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 16px;
+  border-radius: 16px;
+  background: var(--clr-hover);
+  overflow: hidden;
 }
 .testimonial-grid .testimonial:nth-child(2) .image-container img {
   width: 45%;
-  border: 2px solid black;
+  padding: 10px 5px;
+  z-index: 2;
+}
+.testimonial-grid .testimonial:nth-child(2) .image-container::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 200%;
+  margin-bottom: 32px;
+  background: var(--lime-gradient);
+  -webkit-animation: animate 4s linear infinite;
+          animation: animate 4s linear infinite;
+}
+.testimonial-grid .testimonial:nth-child(2) .image-container::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--clr-hover);
+  border-radius: 16px;
+}
+@-webkit-keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .testimonial-grid .testimonial:last-child {
   background: var(--clr-yellow);
